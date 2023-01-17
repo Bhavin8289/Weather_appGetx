@@ -50,6 +50,8 @@ class GlobleController extends GetxController {
       _lattitude.value = value.latitude;
       _longitude.value = value.longitude;
       _isLoading.value = false;
+
+      //! After Update Current Location Calling Api Here
     });
   }
 }
