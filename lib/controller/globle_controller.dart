@@ -1,5 +1,6 @@
 import 'package:geolocator/geolocator.dart';
 import 'package:get/get.dart';
+import 'package:weather_appgetx/controller/api/fetch_Weather.dart';
 
 class GlobleController extends GetxController {
   //! Variable
@@ -49,7 +50,9 @@ class GlobleController extends GetxController {
       //Update Lattitude and Longitude
       _lattitude.value = value.latitude;
       _longitude.value = value.longitude;
-      _isLoading.value = false;
+      return FetchWeatherApi()
+          .getData(value.altitude, value.longitude)
+          .then((value) => {_isLoading.value = false});
 
       //! After Update Current Location Calling Api Here
     });
