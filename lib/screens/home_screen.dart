@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:weather_appgetx/controller/globle_controller.dart';
 
+import 'widgets/header.dart';
+
 class HomePage extends StatefulWidget {
   const HomePage({super.key});
 
@@ -14,6 +16,24 @@ class _HomePageState extends State<HomePage> {
       Get.put(GlobleController(), permanent: true);
   @override
   Widget build(BuildContext context) {
-    return const Scaffold();
+    return Scaffold(
+      body: SafeArea(
+        child: Obx(
+          () => globleController.checkLoading().isTrue
+              ? const Center(
+                  child: CircularProgressIndicator(),
+                )
+              : ListView(
+                  scrollDirection: Axis.vertical,
+                  children: const [
+                    SizedBox(
+                      height: 40,
+                    ),
+                    Header(),
+                  ],
+                ),
+        ),
+      ),
+    );
   }
 }

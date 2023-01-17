@@ -7,7 +7,7 @@ class GlobleController extends GetxController {
   final RxDouble _lattitude = 0.0.obs;
   final RxDouble _longitude = 0.0.obs;
   //! Instance For Them Called
-  RxBool cheakLoading() => _isLoading;
+  RxBool checkLoading() => _isLoading;
   RxDouble getlattitude() => _lattitude;
   RxDouble getlongitude() => _longitude;
 
