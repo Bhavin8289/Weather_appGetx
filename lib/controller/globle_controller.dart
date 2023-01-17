@@ -1,0 +1,55 @@
+import 'package:geolocator/geolocator.dart';
+import 'package:get/get.dart';
+
+class GlobleController extends GetxController {
+  //! Variable
+  final RxBool _isLoading = true.obs;
+  final RxDouble _lattitude = 0.0.obs;
+  final RxDouble _longitude = 0.0.obs;
+  //! Instance For Them Called
+  RxBool cheakLoading() => _isLoading;
+  RxDouble getlattitude() => _lattitude;
+  RxDouble getlongitude() => _longitude;
+
+  @override
+  void onInit() {
+    if (_isLoading.isTrue) {
+      getLocation();
+    }
+
+    super.onInit();
+  }
+
+  getLocation() async {
+    bool isServiceEnable;
+    LocationPermission locationPermission;
+
+    isServiceEnable = await Geolocator.isLocationServiceEnabled();
+    //! return if service not available
+    if (!isServiceEnable) {
+      return Future.error('Location not available');
+    }
+    //! status permission
+    locationPermission = await Geolocator.checkPermission();
+    if (locationPermission == LocationPermission.deniedForever) {
+      return Future.error('Location permisson are denided forever');
+    } else if (locationPermission == LocationPermission.denied) {
+      //! request permission
+      locationPermission = await Geolocator.requestPermission();
+      if (locationPermission == LocationPermission.denied) {
+        return Future.error('Location permission denied');
+      }
+    }
+
+    //! GET THE CURRENT LOCATION
+
+    return await Geolocator.getCurrentPosition(
+            desiredAccuracy: LocationAccuracy.high)
+        .then((value) {
+      //Update Lattitude and Longitude
+      _lattitude.value = value.latitude;
+      _longitude.value = value.longitude;
+      _isLoading.value = false;
+    });
+  }
+}
