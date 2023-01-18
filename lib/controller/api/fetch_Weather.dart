@@ -9,10 +9,12 @@ class FetchWeatherApi {
 
   //Processing Data Response To Json
 
-  Future<WeatherData> getData(lat, lon) async {
+  Future<WeatherData?> getData(lat, lon) async {
     final response = await http.get(
-      Uri.parse(apiUrl(lat, lon)),
+      Uri.parse(
+          'https://api.openweathermap.org/data/3.0/onecall?lat=$lat&lon=$lon&appid=111e76f07e2c48a7d42b3fedbf8f9f4f'),
     );
+    log(response.body);
     var jsonresponse = jsonDecode(response.body);
 
     log(jsonresponse);
@@ -20,12 +22,12 @@ class FetchWeatherApi {
     weatherData =
         WeatherData(current: WeatherDataCurrent.fromJson(jsonresponse));
 
-    return weatherData!;
+    return weatherData;
   }
 }
 
-apiUrl(var lat, var lon) {
-  String url;
-  url =
-      "https://api.openweathermap.org/data/3.0/onecall?lat=$lat&lon=$lon&appid=111e76f07e2c48a7d42b3fedbf8f9f4f";
-}
+// apiUrl(lat, lon) {
+//   String url;
+//   url =
+//       "https://api.openweathermap.org/data/3.0/onecall?lat=$lat&lon=$lon&appid=111e76f07e2c48a7d42b3fedbf8f9f4f";
+// }
