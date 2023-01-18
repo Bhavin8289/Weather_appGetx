@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:weather_appgetx/controller/globle_controller.dart';
 import 'package:weather_appgetx/screens/widgets/current_weather.dart';
-
 import 'widgets/header.dart';
 
 class HomePage extends StatefulWidget {
@@ -30,10 +29,13 @@ class _HomePageState extends State<HomePage> {
                     const SizedBox(
                       height: 40,
                     ),
+                    //!Location Header
                     const Header(),
-                    CurrentWeather(
-                      weatherDataCurrent: globleController.getWeatherData(),
-                    ),
+                    //! Current Temp
+                    CurrentWeatherWideget(
+                      weatherDataCurrent:
+                          globleController.getWeatherData().getCurrentWeather(),
+                    )
                   ],
                 ),
         ),
