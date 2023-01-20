@@ -15,7 +15,7 @@ class GlobleController extends GetxController {
 
   final weatherData = WeatherData().obs;
 
-  WeatherData getWeatherData() {
+  WeatherData getWeather() {
     return weatherData.value;
   }
 
@@ -57,13 +57,13 @@ class GlobleController extends GetxController {
       //Update Lattitude and Longitude
       _lattitude.value = value.latitude;
       _longitude.value = value.longitude;
+      //! After Update Current Location Calling Api Here
       return FetchWeatherApi()
           .getWeatherData(value.latitude, value.longitude)
           .then((value) {
         weatherData.value = value;
         _isLoading.value = false;
       });
-      //! After Update Current Location Calling Api Here
     });
   }
 }

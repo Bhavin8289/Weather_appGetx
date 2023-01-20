@@ -1,10 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:weather_appgetx/models/Current_weather.dart';
+import 'package:weather_appgetx/Models/Current_weather.dart';
 
-class CurrentWeatherWideget extends StatelessWidget {
-  final WeatherDataCurrent weatherDataCurrent;
-  const CurrentWeatherWideget({Key? key, required this.weatherDataCurrent})
-      : super(key: key);
+class CurrentWeatherWidget extends StatelessWidget {
+  final WeatherDataCurrent weatherdatacurrent;
+  const CurrentWeatherWidget({super.key, required this.weatherdatacurrent});
 
   @override
   Widget build(BuildContext context) {

@@ -32,10 +32,9 @@ class _HomePageState extends State<HomePage> {
                     //!Location Header
                     const Header(),
                     //! Current Temp
-                    CurrentWeatherWideget(
-                      weatherDataCurrent:
-                          globleController.getWeatherData().getCurrentWeather(),
-                    )
+                    CurrentWeatherWidget(
+                        weatherdatacurrent:
+                            globleController.getWeather().getCurrentWeather()),
                   ],
                 ),
         ),
