@@ -105,7 +105,12 @@ class Details extends StatelessWidget {
       children: [
         Container(
           margin: const EdgeInsets.only(top: 10),
-          child: Text(getTime(timeStamp)),
+          child: Text(getTime(timeStamp),
+              style: TextStyle(
+                color: cardIndex == index
+                    ? Colors.white
+                    : CustomColors.textcolorblack,
+              )),
         ),
         Container(
           margin: const EdgeInsets.all(5),
@@ -117,7 +122,12 @@ class Details extends StatelessWidget {
         ),
         Container(
           margin: const EdgeInsets.only(bottom: 10),
-          child: Text('$temp°'),
+          child: Text('$temp°',
+              style: TextStyle(
+                color: cardIndex == index
+                    ? Colors.white
+                    : CustomColors.textcolorblack,
+              )),
         ),
       ],
     );
