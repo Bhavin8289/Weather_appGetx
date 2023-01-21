@@ -1,16 +1,12 @@
-# weather_appgetx
+# weather_app
 
-A new Flutter project.
+Using GetX Package 
 
-## Getting Started
+OpenWeather Api 
 
-This project is a starting point for a Flutter application.
+Current => Today => Daily : 
 
-A few resources to get you started if this is your first Flutter project:
+![Current Location](https://user-images.githubusercontent.com/105209903/213863934-88aaa72d-773d-4b77-87a1-ab7e6fcdcebc.jpg)
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+![Today_Next 7 Days](https://user-images.githubusercontent.com/105209903/213863938-15a0abc5-2998-4c48-8bd4-798de6c742df.jpg)
