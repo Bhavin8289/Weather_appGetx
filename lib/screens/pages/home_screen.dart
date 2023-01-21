@@ -28,7 +28,11 @@ class _HomePageState extends State<HomePage> {
                   child: Column(
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
-                      Image.asset('assets/icons/clouds.png'),
+                      Image.asset(
+                        'assets/icons/clouds.png',
+                        height: 250,
+                        width: 250,
+                      ),
                       const CircularProgressIndicator()
                     ],
                   ),
