@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
 import 'package:weather_appgetx/Models/Weather_daily.dart';
-import 'package:weather_appgetx/screens/Style/Coustom_colors.dart';
 
 class DailyWeather extends StatelessWidget {
   final WeatherDataDaily weatherDataDaily;
@@ -20,21 +19,24 @@ class DailyWeather extends StatelessWidget {
       margin: const EdgeInsets.all(10),
       padding: const EdgeInsets.all(10),
       decoration: BoxDecoration(
-        color: CustomColors.dividerline,
+        color: Colors.grey,
         borderRadius: BorderRadius.circular(20),
       ),
       child: Column(
         children: [
           Container(
-            alignment: Alignment.topLeft,
-            margin: const EdgeInsets.only(top: 10),
+            alignment: Alignment.center,
+            margin: const EdgeInsets.only(top: 2),
             child: const Text(
               'Next Days',
               style: TextStyle(
-                  color: CustomColors.textcolorblack,
+                  color: Colors.black,
                   fontSize: 20,
                   fontWeight: FontWeight.bold),
             ),
+          ),
+          const SizedBox(
+            height: 12,
           ),
           dailyList(),
         ],
@@ -44,7 +46,7 @@ class DailyWeather extends StatelessWidget {
 
   Widget dailyList() {
     return SizedBox(
-      height: 380,
+      height: 370,
       child: ListView.builder(
         physics: const ScrollPhysics(
           parent: BouncingScrollPhysics(),
@@ -64,27 +66,32 @@ class DailyWeather extends StatelessWidget {
                   children: [
                     SizedBox(
                       height: 50,
-                      child: Text(
-                        getDay(weatherDataDaily.daily[index].dt),
-                        style: const TextStyle(
-                            color: CustomColors.textcolorblack,
-                            fontSize: 20,
-                            fontWeight: FontWeight.w500),
+                      child: Center(
+                        child: Text(
+                          getDay(weatherDataDaily.daily[index].dt),
+                          style: const TextStyle(
+                              color: Colors.black,
+                              fontSize: 20,
+                              fontWeight: FontWeight.bold),
+                        ),
                       ),
                     ),
                     SizedBox(
                       height: 50,
-                      child: Image.asset(
-                          'assets/weather/${weatherDataDaily.daily[index].weather![0].icon}.png'),
+                      child: Center(
+                        child: Image.asset(
+                            'assets/weather/${weatherDataDaily.daily[index].weather![0].icon}.png'),
+                      ),
                     ),
                     Text(
-                        '${weatherDataDaily.daily[index].temp!.min}°/${weatherDataDaily.daily[index].temp!.max}'),
+                      '${weatherDataDaily.daily[index].temp!.min}°/${weatherDataDaily.daily[index].temp!.max}',
+                      style: const TextStyle(
+                          color: Colors.black,
+                          fontSize: 12,
+                          fontWeight: FontWeight.bold),
+                    ),
                   ],
                 ),
-              ),
-              Container(
-                height: 1,
-                color: Colors.teal,
               ),
             ],
           );
