@@ -105,19 +105,31 @@ class Details extends StatelessWidget {
       children: [
         Container(
           margin: const EdgeInsets.only(top: 10),
-          child: Text(getTime(timeStamp)),
+          child: Text(
+            getTime(timeStamp),
+            style: TextStyle(
+                color: cardIndex == index
+                    ? Colors.white
+                    : CustomColors.textcolorblack),
+          ),
         ),
         Container(
           margin: const EdgeInsets.all(5),
           child: Image.asset(
             'assets/weather/$weatherIcon.png',
-            height: 30,
-            width: 30,
+            height: 40,
+            width: 40,
           ),
         ),
         Container(
           margin: const EdgeInsets.only(bottom: 10),
-          child: Text('$temp°'),
+          child: Text(
+            '$temp°',
+            style: TextStyle(
+                color: cardIndex == index
+                    ? Colors.white
+                    : CustomColors.textcolorblack),
+          ),
         ),
       ],
     );
