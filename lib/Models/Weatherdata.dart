@@ -1,3 +1,5 @@
+// ignore_for_file: file_names
+
 import 'package:weather_appgetx/Models/Current_weather.dart';
 import 'package:weather_appgetx/Models/Weather_daily.dart';
 import 'package:weather_appgetx/Models/Weather_hourly.dart';

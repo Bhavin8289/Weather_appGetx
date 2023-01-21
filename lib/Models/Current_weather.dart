@@ -1,5 +1,6 @@
 //![API CALLING INSTANCE HERE]
 
+// ignore_for_file: file_names
 class WeatherDataCurrent {
   final Current current;
 
