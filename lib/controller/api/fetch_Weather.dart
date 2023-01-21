@@ -3,6 +3,7 @@ import 'dart:developer';
 import 'package:http/http.dart' as http;
 import 'package:weather_appgetx/Models/Current_weather.dart';
 import 'package:weather_appgetx/controller/api/api_key.dart';
+import 'package:weather_appgetx/screens/App/url.dart';
 import '../../Models/Weatherdata.dart';
 
 class FetchWeatherApi {
@@ -16,16 +17,9 @@ class FetchWeatherApi {
 
     var jsonData = jsonDecode(response.body.trim());
 
-    log(jsonData);
+    // log(jsonData);
 
     weatherData = WeatherData(WeatherDataCurrent.fromJson(jsonData));
     return weatherData!;
-  }
-
-  String apiUrl(var lat, var lon) {
-    String url;
-    url =
-        "https://api.openweathermap.org/data/3.0/onecall?lat=$lat&lon=$lon&appid=$apiKey&units=metrix&exclude=minutely";
-    return url;
   }
 }
