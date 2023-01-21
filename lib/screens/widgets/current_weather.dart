@@ -50,7 +50,7 @@ class CurrentWeatherWidget extends StatelessWidget {
                   style: TextStyle(
                       color: Colors.grey.shade900,
                       fontSize: 14,
-                      fontWeight: FontWeight.w100)),
+                      fontWeight: FontWeight.w500)),
             ],
           ),
         ),

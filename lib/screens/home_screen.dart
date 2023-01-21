@@ -29,7 +29,7 @@ class _HomePageState extends State<HomePage> {
                     scrollDirection: Axis.vertical,
                     children: [
                       const SizedBox(
-                        height: 40,
+                        height: 30,
                       ),
                       //!Location Header
                       const Header(),
@@ -38,7 +38,7 @@ class _HomePageState extends State<HomePage> {
                           weatherdatacurrent: globleController
                               .getWeather()
                               .getCurrentWeather()),
-                      SizedBox(
+                      const SizedBox(
                         height: 30,
                       ),
 

@@ -8,6 +8,7 @@ class GlobleController extends GetxController {
   final RxBool _isLoading = true.obs;
   final RxDouble _lattitude = 0.0.obs;
   final RxDouble _longitude = 0.0.obs;
+  final RxInt _cardIndex = 0.obs;
   //! Instance For Them Called
   RxBool checkLoading() => _isLoading;
   RxDouble getlattitude() => _lattitude;
@@ -23,6 +24,8 @@ class GlobleController extends GetxController {
   void onInit() {
     if (_isLoading.isTrue) {
       getLocation();
+    } else {
+      getIndex();
     }
 
     super.onInit();
@@ -65,5 +68,9 @@ class GlobleController extends GetxController {
         _isLoading.value = false;
       });
     });
+  }
+
+  RxInt getIndex() {
+    return _cardIndex;
   }
 }
