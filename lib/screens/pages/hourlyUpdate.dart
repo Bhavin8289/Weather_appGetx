@@ -92,8 +92,8 @@ class Details extends StatelessWidget {
       required this.timeStamp,
       required this.weatherIcon});
 
-  String getTime(int timeStamp) {
-    DateTime time = DateTime.fromMicrosecondsSinceEpoch(timeStamp * 1000);
+  String getTime(final timeStamp) {
+    DateTime time = DateTime.fromMillisecondsSinceEpoch(timeStamp * 1000);
     String b = DateFormat('jm').format(time);
     return b;
   }
