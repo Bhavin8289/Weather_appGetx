@@ -16,7 +16,7 @@ class ComfortLevel extends StatelessWidget {
           child: const Text(
             'COMFORT LEVEL',
             style: TextStyle(
-                fontSize: 20, fontWeight: FontWeight.w700, color: Colors.grey),
+                fontSize: 20, fontWeight: FontWeight.w700, color: Colors.white),
           ),
         ),
         SizedBox(
@@ -29,8 +29,10 @@ class ComfortLevel extends StatelessWidget {
                   max: 100,
                   initialValue: weatherDataCurrent.current.humidity!.toDouble(),
                   appearance: CircularSliderAppearance(
-                      infoProperties:
-                          InfoProperties(bottomLabelText: 'Humidity'),
+                      infoProperties: InfoProperties(
+                        mainLabelStyle: const TextStyle(color: Colors.white),
+                        bottomLabelText: 'Humidity',
+                      ),
                       animationEnabled: true,
                       size: 150,
                       customColors: CustomSliderColors(
@@ -54,24 +56,24 @@ class ComfortLevel extends StatelessWidget {
                           text: 'Feels Like',
                           style: TextStyle(
                               fontSize: 12,
-                              color: Colors.black,
+                              color: Colors.white,
                               fontWeight: FontWeight.w500),
                         ),
                         TextSpan(
                           text: '${weatherDataCurrent.current.feelIsLike}',
                           style: const TextStyle(
                               fontSize: 12,
-                              color: Colors.black,
+                              color: Colors.white,
                               fontWeight: FontWeight.w500),
                         ),
                       ],
                     ),
                   ),
                   Container(
-                    height: 12,
+                    height: 15,
                     margin: const EdgeInsets.only(left: 30, right: 30),
-                    width: 1,
-                    color: Colors.blue,
+                    width: 5,
+                    color: Colors.grey,
                   ),
                   RichText(
                     text: TextSpan(
@@ -80,14 +82,14 @@ class ComfortLevel extends StatelessWidget {
                           text: 'UV Index',
                           style: TextStyle(
                               fontSize: 12,
-                              color: Colors.black,
+                              color: Colors.white,
                               fontWeight: FontWeight.w500),
                         ),
                         TextSpan(
                           text: '${weatherDataCurrent.current.uvIndex}',
                           style: const TextStyle(
                               fontSize: 12,
-                              color: Colors.black,
+                              color: Colors.white,
                               fontWeight: FontWeight.w500),
                         ),
                       ],

@@ -3,7 +3,6 @@ import 'package:get/get.dart';
 import 'package:intl/intl.dart';
 import 'package:weather_appgetx/Models/Weather_hourly.dart';
 import 'package:weather_appgetx/controller/globle_controller.dart';
-import 'package:weather_appgetx/screens/Style/Coustom_colors.dart';
 
 class HourlyData extends StatelessWidget {
   final WeatherDataHourly weatherDataHourly;
@@ -21,7 +20,7 @@ class HourlyData extends StatelessWidget {
           child: const Text(
             'TODAY',
             style: TextStyle(
-                fontSize: 20, fontWeight: FontWeight.w700, color: Colors.grey),
+                fontSize: 20, fontWeight: FontWeight.w700, color: Colors.white),
           ),
         ),
         hourlyWeather(),
@@ -54,10 +53,7 @@ class HourlyData extends StatelessWidget {
                         borderRadius: BorderRadius.circular(15),
                         gradient: cardIndex.value == index
                             ? const LinearGradient(
-                                colors: [
-                                  CustomColors.fristgreading,
-                                  CustomColors.secondgreadint
-                                ],
+                                colors: [Colors.red, Colors.purple],
                               )
                             : null),
                     child: Details(
@@ -107,27 +103,23 @@ class Details extends StatelessWidget {
           margin: const EdgeInsets.only(top: 10),
           child: Text(getTime(timeStamp),
               style: TextStyle(
-                color: cardIndex == index
-                    ? Colors.white
-                    : CustomColors.textcolorblack,
-              )),
+                  color: cardIndex == index ? Colors.white : Colors.red,
+                  fontWeight: FontWeight.bold)),
         ),
         Container(
           margin: const EdgeInsets.all(5),
           child: Image.asset(
             'assets/weather/$weatherIcon.png',
-            height: 30,
-            width: 30,
+            height: 40,
+            width: 40,
           ),
         ),
         Container(
           margin: const EdgeInsets.only(bottom: 10),
           child: Text('$temp°',
               style: TextStyle(
-                color: cardIndex == index
-                    ? Colors.white
-                    : CustomColors.textcolorblack,
-              )),
+                  color: cardIndex == index ? Colors.white : Colors.teal,
+                  fontWeight: FontWeight.bold)),
         ),
       ],
     );

@@ -41,16 +41,22 @@ class _HeaderState extends State<Header> {
       children: [
         Container(
           margin: const EdgeInsets.only(left: 30, right: 30),
-          alignment: Alignment.topLeft,
+          alignment: Alignment.center,
           child: Text(
             city,
             style: const TextStyle(
-                fontSize: 35, fontWeight: FontWeight.bold, height: 1.2),
+                fontSize: 35,
+                fontWeight: FontWeight.bold,
+                height: 1.2,
+                color: Colors.white),
           ),
+        ),
+        const SizedBox(
+          height: 5,
         ),
         Container(
           margin: const EdgeInsets.only(left: 30, right: 30, bottom: 40),
-          alignment: Alignment.topLeft,
+          alignment: Alignment.center,
           child: Text(
             date,
             style: const TextStyle(fontSize: 15, color: Colors.grey, height: 1),
