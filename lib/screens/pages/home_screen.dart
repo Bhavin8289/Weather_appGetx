@@ -1,9 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:weather_appgetx/controller/globle_controller.dart';
-import 'package:weather_appgetx/screens/widgets/current_weather.dart';
-import 'package:weather_appgetx/screens/widgets/update/hourlyUpdate.dart';
-import 'widgets/header.dart';
+import 'package:weather_appgetx/screens/pages/Daily_weather.dart';
+import 'package:weather_appgetx/screens/pages/current_weather.dart';
+import 'package:weather_appgetx/screens/pages/hourlyUpdate.dart';
+import 'package:weather_appgetx/screens/Components/header.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({super.key});
@@ -45,6 +46,14 @@ class _HomePageState extends State<HomePage> {
                       HourlyData(
                         weatherDataHourly:
                             globleController.getWeather().getHourlyWeather(),
+                      ),
+                      const SizedBox(
+                        height: 30,
+                      ),
+
+                      DailyWeather(
+                        weatherDataDaily:
+                            globleController.getWeather().getDailyWeather(),
                       )
                     ],
                   ),

@@ -3,7 +3,7 @@ import 'package:get/get.dart';
 import 'package:intl/intl.dart';
 import 'package:weather_appgetx/Models/Weather_hourly.dart';
 import 'package:weather_appgetx/controller/globle_controller.dart';
-import 'package:weather_appgetx/screens/App/Coustom_colors.dart';
+import 'package:weather_appgetx/screens/Style/Coustom_colors.dart';
 
 class HourlyData extends StatelessWidget {
   final WeatherDataHourly weatherDataHourly;

@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:geocoding/geocoding.dart';
 import 'package:get/get.dart';
 import 'package:intl/intl.dart';
-import '../../controller/globle_controller.dart';
+import '../../../controller/globle_controller.dart';
 
 class Header extends StatefulWidget {
   const Header({super.key});

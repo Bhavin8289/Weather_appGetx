@@ -2,8 +2,9 @@ import 'dart:convert';
 import 'dart:developer';
 import 'package:http/http.dart' as http;
 import 'package:weather_appgetx/Models/Current_weather.dart';
+import 'package:weather_appgetx/Models/Weather_daily.dart';
 import 'package:weather_appgetx/Models/Weather_hourly.dart';
-import 'package:weather_appgetx/screens/App/url.dart';
+import 'package:weather_appgetx/screens/Style/url.dart';
 import '../../Models/Weatherdata.dart';
 
 class FetchWeatherApi {
@@ -19,8 +20,10 @@ class FetchWeatherApi {
 
     // log(jsonData);
 
-    weatherData = WeatherData(WeatherDataCurrent.fromJson(jsonData),
-        WeatherDataHourly.fromJson(jsonData));
+    weatherData = WeatherData(
+        WeatherDataCurrent.fromJson(jsonData),
+        WeatherDataHourly.fromJson(jsonData),
+        WeatherDataDaily.fromJson(jsonData));
     return weatherData!;
   }
 }
